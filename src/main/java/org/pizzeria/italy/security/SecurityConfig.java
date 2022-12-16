@@ -18,9 +18,9 @@ public class SecurityConfig {
 	@Bean
 	public SecurityFilterChain getFilterChain(HttpSecurity http) throws Exception {
 
-		http.authorizeHttpRequests().requestMatchers(HttpMethod.GET, "/*/user", "/*/user/**").hasAuthority("USER")
-				.requestMatchers(HttpMethod.POST, "/*/admin", "/*/admin/**").hasAuthority("ADMIN")
-				.requestMatchers(HttpMethod.POST, "/*/useradmin", "/*/useradmin/**").hasAnyAuthority("USER", "ADMIN")
+		http.authorizeHttpRequests().requestMatchers("/*/user", "/*/user/**").hasAuthority("USER")
+				.requestMatchers("/*/admin", "/*/admin/**").hasAuthority("ADMIN")
+				.requestMatchers( "/*/useradmin", "/*/useradmin/**").hasAnyAuthority("USER", "ADMIN")
 				.requestMatchers("/**").permitAll().and().formLogin().and().logout();
 
 		return http.build();
@@ -49,5 +49,9 @@ public class SecurityConfig {
 		return provider;
 	}
 
+	@Bean
+	public SpringSecurityDialect securityDialect() {
+		return new SpringSecurityDialect();
+	}
 
 }

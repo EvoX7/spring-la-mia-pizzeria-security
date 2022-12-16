@@ -71,7 +71,7 @@ public class PizzaController {
 
 			redirectAttributes.addFlashAttribute("errors", bindingResult.getAllErrors());
 
-			return "redirect:/admin/create";
+			return "redirect:/pizzas/admin/create";
 		}
 
 		try {
@@ -81,10 +81,10 @@ public class PizzaController {
 
 			redirectAttributes.addFlashAttribute("catchError", e.getMessage());
 
-			return "redirect:/admin/create";
+			return "redirect:/pizzas/admin/create";
 		}
 
-		return "redirect:/pizzas";
+		return "redirect:/pizzas/admin/create";
 	}
 
 	@GetMapping("/admin/edit/{id}")
@@ -109,7 +109,7 @@ public class PizzaController {
 
 		pizzaService.save(pizza);
 
-		return "redirect:/";
+		return "redirect:/pizzas";
 	}
 
 	@GetMapping("/admin/delete/{id}")
@@ -122,7 +122,7 @@ public class PizzaController {
 
 //	SEARCH BAR 
 
-	@GetMapping("/admin/search")
+	@GetMapping("/user/search")
 	
 	public String getSearchPizzaByName(Model model, @RequestParam(name = "query", required = false) String query) {
 

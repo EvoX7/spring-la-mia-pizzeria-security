@@ -46,9 +46,11 @@
 	</header>
 
 	<div class="container">
+	<h5 class="mt-4">
+			Logged user: <span sec:authentication="name"></span>
+		</h5>
 		<div class="row">
 			<div class="col">
-
 				<h1 class="mt-5 text-center">
 					Luigi's Ingredients List <img class="m-auto"
 						th:src="@{/img/ingredients.png}" width="160px" height="100px"

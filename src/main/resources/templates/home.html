@@ -46,6 +46,10 @@
 	</header>
 
 	<div class="container">
+
+		<h5 class="mt-4">
+			Logged user: <span sec:authentication="name"></span>
+		</h5>
 		<div class="row">
 			<div class="col d-flex justify-content-center mt-5">
 
@@ -53,6 +57,8 @@
 					Welcome to Luigi's Pizzeria <img class="m-auto"
 						th:src="@{/img/pizza.png}" width="80px" height="80px" alt="pizza" />
 				</h1>
+				<br>
+
 			</div>
 		</div>
 	</div>

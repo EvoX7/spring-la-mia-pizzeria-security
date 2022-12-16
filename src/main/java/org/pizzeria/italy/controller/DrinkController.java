@@ -89,7 +89,7 @@ public class DrinkController {
 		return "redirect:/drink";
 	}
 
-	@GetMapping("/admin/search")
+	@GetMapping("/user/search")
 	public String getSearchDrinkByName(Model model, @RequestParam(name = "query", required = false) String query) {
 
 		List<Drink> drinks = null;

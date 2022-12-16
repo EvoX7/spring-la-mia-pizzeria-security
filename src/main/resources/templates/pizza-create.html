@@ -42,7 +42,7 @@
             <li class="text-danger" th:each="error : ${errors}" th:object="${error}">Value [[*{defaultMessage}]]</li>
           </ul>
         </div>
-        <form method="POST" action="/pizzas/admin/create" th:object="${pizza}">
+        <form method="POST" th:action="@{/pizzas/admin/create}" th:object="${pizza}">
           <label>Name</label><br> <input type="text" name="name" th:field="*{name}"> <br> <label>Description</label><br>
           <textarea name="description" th:field="*{description}"></textarea>
           <br> <label>Price</label><br> <input type="number" name="price" th:field="*{price}"> <br> <label class="fw-bold">Promotion</label>

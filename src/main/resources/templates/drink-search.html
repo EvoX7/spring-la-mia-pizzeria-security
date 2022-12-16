@@ -44,6 +44,9 @@
 	</header>
 
 	<div class="container">
+	<h5 class="mt-4">
+			Logged user: <span sec:authentication="name"></span>
+		</h5>
 		<div class="row">
 			<div class="col">
 				<h1 class="mt-5 text-center">
@@ -55,7 +58,7 @@
 				<div class="d-flex justify-content-between mb-2">
 					<div>
 						<form class="d-flex" role="search" method="GET"
-							action="/drink/admin/search">
+							th:action="@{/drink/user/search}">
 							<input class="form-control me-2" type="text" name="query"
 								th:value="${query}" aria-label="Search">
 							<button class="btn btn-primary" type="submit">Search</button>
@@ -85,7 +88,8 @@
 					</tr>
 				</table>
 				<div class="d-flex justify-content-end">
-					<a th:href="@{/}" class="btn btn-primary fw-bold">Go to Pizzas =></a>
+					<a th:href="@{/pizzas}" class="btn btn-primary fw-bold">Go to
+						Pizzas =></a>
 				</div>
 			</div>
 		</div>
