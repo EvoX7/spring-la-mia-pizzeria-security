@@ -3,7 +3,6 @@ package org.pizzeria.italy.security;
 import org.pizzeria.italy.service.UserService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -17,10 +16,10 @@ public class SecurityConfig {
 	@Bean
 	public SecurityFilterChain getFilterChain(HttpSecurity http) throws Exception {
 
-		http.authorizeHttpRequests().requestMatchers(HttpMethod.GET, "/user", "/user/**").hasAuthority("USER")
-				.requestMatchers(HttpMethod.POST, "/user", "/user/**").hasAuthority("ADMIN")
-				.requestMatchers("/admin", "/admin/**").hasAuthority("ADMIN")
-				.requestMatchers("/useradmin", "/useradmin/**").hasAnyAuthority("USER", "ADMIN").requestMatchers("/**")
+		http.authorizeHttpRequests()
+		        .requestMatchers("/*/user", "/*/user/**").hasAuthority("USER")
+				.requestMatchers("/*/admin", "/*/admin/**").hasAuthority("ADMIN")
+				.requestMatchers("/*/useradmin", "/*/useradmin/**").hasAnyAuthority("USER", "ADMIN").requestMatchers("/**")
 				.permitAll().and().formLogin().and().logout();
 
 		return http.build();

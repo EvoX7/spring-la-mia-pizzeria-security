@@ -23,7 +23,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import jakarta.validation.Valid;
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("/pizzas")
 public class PizzaController {
 
 	@Autowired
@@ -44,7 +44,7 @@ public class PizzaController {
 		return "index";
 	}
 
-	@GetMapping("/pizza/create")
+	@GetMapping("/admin/create")
 	public String createNewPizza(Model model) {
 
 		Pizza pizza = new Pizza();
@@ -59,7 +59,7 @@ public class PizzaController {
 		return "pizza-create";
 	}
 
-	@PostMapping("/pizza/create")
+	@PostMapping("/admin/create")
 	public String getStorePizza(@Valid Pizza pizza, BindingResult bindingResult,
 			RedirectAttributes redirectAttributes) {
 
@@ -71,10 +71,8 @@ public class PizzaController {
 
 			redirectAttributes.addFlashAttribute("errors", bindingResult.getAllErrors());
 
-			return "redirect:/pizza/create";
+			return "redirect:/admin/create";
 		}
-//		for (Ingredient i : pizza.getIngredients()) {
-//		}
 
 		try {
 
@@ -83,13 +81,13 @@ public class PizzaController {
 
 			redirectAttributes.addFlashAttribute("catchError", e.getMessage());
 
-			return "redirect:/pizza/create";
+			return "redirect:/admin/create";
 		}
 
-		return "redirect:/";
+		return "redirect:/pizzas";
 	}
 
-	@GetMapping("/pizza/edit/{id}")
+	@GetMapping("/admin/edit/{id}")
 	public String editPizza(@PathVariable("id") int id, Model model) {
 
 		Optional<Pizza> optPizza = pizzaService.findPizzaById(id);
@@ -106,7 +104,7 @@ public class PizzaController {
 		return "pizza-update";
 	}
 
-	@PostMapping("/pizza/edit")
+	@PostMapping("/admin/edit")
 	public String updatePizza(@Valid Pizza pizza) {
 
 		pizzaService.save(pizza);
@@ -114,17 +112,17 @@ public class PizzaController {
 		return "redirect:/";
 	}
 
-	@GetMapping("/pizza/delete/{id}")
+	@GetMapping("/admin/delete/{id}")
 	public String deletePizza(@PathVariable("id") int id) {
 
 		pizzaService.deleteById(id);
 
-		return "redirect:/";
+		return "redirect:/pizzas";
 	}
 
 //	SEARCH BAR 
 
-	@GetMapping("/pizza/search")
+	@GetMapping("/user/search")
 	public String getSearchPizzaByName(Model model, @RequestParam(name = "query", required = false) String query) {
 
 		List<Pizza> pizzas = null;

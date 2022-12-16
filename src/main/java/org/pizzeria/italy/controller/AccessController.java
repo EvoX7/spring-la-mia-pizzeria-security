@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/home")
+@RequestMapping("/")
 public class AccessController {
 
 	@GetMapping
@@ -17,7 +17,7 @@ public class AccessController {
 	@GetMapping("/user")
 	public String getUser() {
 
-		return "user";
+		return "home";
 	}
 
 	@GetMapping("/admin")
