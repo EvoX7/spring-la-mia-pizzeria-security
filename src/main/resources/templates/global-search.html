@@ -27,7 +27,7 @@
 				</button>
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav me-auto mt-3 mb-lg-0">
-						<li class="nav-item fw-bold"><a th:href="@{/}"
+						<li class="nav-item fw-bold"><a th:href="@{/pizzas}"
 							class="nav-link">Pizzas</a></li>
 						<li class="nav-item fw-bold"><a th:href="@{/drink}"
 							class="nav-link">Drinks</a></li>
@@ -80,18 +80,18 @@
 						<td th:text="*{name}"></td>
 						<td th:text="*{description}"></td>
 						<td th:text="*{price}"></td>
-						<td><a th:href="@{/pizza/edit/{id}(id=${pizza.id})}"
+						<td><a th:href="@{/pizzas/admin/edit/{id}(id=${pizza.id})}"
 							class="btn btn-warning fw-bold mx-2">Modify</a> <a
-							th:href="@{/pizza/delete/{id}(id=${pizza.id})}"
+							th:href="@{/pizzas/admin/delete/{id}(id=${pizza.id})}"
 							class="btn btn-danger fw-bold">Delete</a></td>
 					<tr class="text-center" th:each="drink : ${drinks}"
 						th:object="${drink}">
 						<td th:text="*{name}"></td>
 						<td th:text="*{description}"></td>
 						<td th:text="*{price}"></td>
-						<td><a th:href="@{/drink/edit/{id}(id=${drink.id})}"
+						<td><a th:href="@{/drink/admin/edit/{id}(id=${drink.id})}"
 							class="btn btn-warning fw-bold mx-2">Modify</a> <a
-							th:href="@{/drink/delete/{id}(id=${drink.id})}"
+							th:href="@{/drink/admin/delete/{id}(id=${drink.id})}"
 							class="btn btn-danger fw-bold">Delete</a></td>
 					</tr>
 				</table>

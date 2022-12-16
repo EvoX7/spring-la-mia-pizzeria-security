@@ -29,7 +29,7 @@
 				</button>
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav me-auto mt-3 mb-lg-0">
-						<li class="nav-item fw-bold"><a th:href="@{/}"
+						<li class="nav-item fw-bold"><a th:href="@{/pizzas}"
 							class="nav-link">Pizzas</a></li>
 						<li class="nav-item fw-bold"><a th:href="@{/drink}"
 							class="nav-link">Drinks</a></li>
@@ -58,7 +58,7 @@
 					are no available promotions</h2>
 				<div class="d-flex justify-content-end mb-2">
 					<div>
-						<a href="/promotion/create" class="btn btn-success mb-1 fw-bold">Add
+						<a href="/promotion/admin/create" class="btn btn-success mb-1 fw-bold">Add
 							a new Promotion</a>
 					</div>
 				</div>
@@ -82,7 +82,7 @@
 						<td> 
 						
 						<a
-							th:href="@{/promotion/delete/{id}(id=${promotion.id})}"
+							th:href="@{/promotion/admin/delete/{id}(id=${promotion.id})}"
 							class="btn btn-danger fw-bold">Delete</a></td>
 
 					</tr>

@@ -122,7 +122,8 @@ public class PizzaController {
 
 //	SEARCH BAR 
 
-	@GetMapping("/user/search")
+	@GetMapping("/admin/search")
+	
 	public String getSearchPizzaByName(Model model, @RequestParam(name = "query", required = false) String query) {
 
 		List<Pizza> pizzas = null;

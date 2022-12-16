@@ -33,7 +33,7 @@ public class DrinkController {
 		return "index2";
 	}
 
-	@GetMapping("/create")
+	@GetMapping("/admin/create")
 	public String createNewDrink(Model model) {
 
 		Drink drink = new Drink();
@@ -42,7 +42,7 @@ public class DrinkController {
 		return "drink-create";
 	}
 
-	@PostMapping("/create")
+	@PostMapping("/admin/create")
 	public String getStoreDrink(@Valid Drink drink, BindingResult bindingResult,
 			RedirectAttributes redirectAttributes) {
 
@@ -62,7 +62,7 @@ public class DrinkController {
 		return "redirect:/drink";
 	}
 
-	@GetMapping("/edit/{id}")
+	@GetMapping("/admin/edit/{id}")
 	public String editDrink(@PathVariable("id") int id, Model model) {
 
 		Optional<Drink> optDrink = drinkService.findDrinkById(id);
@@ -73,7 +73,7 @@ public class DrinkController {
 		return "drink-update";
 	}
 
-	@PostMapping("/edit")
+	@PostMapping("/admin/edit")
 	public String updateDrink(@Valid Drink drink) {
 
 		drinkService.save(drink);
@@ -81,7 +81,7 @@ public class DrinkController {
 		return "redirect:/drink";
 	}
 
-	@GetMapping("/delete/{id}")
+	@GetMapping("/admin/delete/{id}")
 	public String deleteDrink(@PathVariable("id") int id) {
 
 		drinkService.deleteById(id);
@@ -89,7 +89,7 @@ public class DrinkController {
 		return "redirect:/drink";
 	}
 
-	@GetMapping("/search")
+	@GetMapping("/admin/search")
 	public String getSearchDrinkByName(Model model, @RequestParam(name = "query", required = false) String query) {
 
 		List<Drink> drinks = null;

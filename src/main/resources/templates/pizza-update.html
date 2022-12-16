@@ -22,7 +22,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mt-3 mb-lg-0">
-            <li class="nav-item fw-bold"><a th:href="@{/}" class="nav-link">Pizzas</a></li>
+            <li class="nav-item fw-bold"><a th:href="@{/pizzas}" class="nav-link">Pizzas</a></li>
             <li class="nav-item fw-bold"><a th:href="@{/drink}" class="nav-link">Drinks</a></li>
             <li class="nav-item fw-bold"><a class="nav-link" th:href="@{/globalsearch}">Search by name</a></li>
             <li class="nav-item fw-bold"><a class="nav-link" th:href="@{/promotion}">Promotions</a></li>
@@ -42,7 +42,7 @@
             <li class="text-danger" th:each="error : ${errors}" th:object="${error}">Value [[*{defaultMessage}]]</li>
           </ul>
         </div>
-        <form method="POST" action="/pizza/edit" th:object="${pizza}">
+        <form method="POST" action="/pizzas/admin/edit" th:object="${pizza}">
           <input type="number" name="id" th:field="*{id}" class="d-none">
           <label>Name</label><br> <input type="text" name="name" th:field="*{name}"> <br> <label>Description</label><br>
           <textarea name="description" th:field="*{description}"></textarea>

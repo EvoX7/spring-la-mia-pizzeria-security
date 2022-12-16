@@ -58,11 +58,11 @@
 					no available pizzas</h2>
 				<div class="d-flex justify-content-between mb-2">
 					<div>
-						<a href="/pizza/search" class="btn btn-primary fw-bold">Find
+						<a href="/pizzas/admin/search" class="btn btn-primary fw-bold">Find
 							your pizza</a>
 					</div>
 					<div>
-						<a href="/pizza/create" class="btn btn-success mb-1 fw-bold">Add
+						<a href="/pizzas/admin/create" class="btn btn-success mb-1 fw-bold">Add
 							a new Pizza</a>
 					</div>
 				</div>
@@ -82,9 +82,9 @@
 						<td th:text="*{price}"></td>
 						<td th:text="*{promotion}">Promotion</td>
 						<td th:text="*{ingredients}">Ingredients</td>
-						<td><a th:href="@{/pizza/edit/{id}(id=${pizza.id})}"
+						<td><a th:href="@{/pizzas/admin/edit/{id}(id=${pizza.id})}"
 							class="btn btn-warning fw-bold mx-2">Modify</a> <a
-							th:href="@{/pizza/delete/{id}(id=${pizza.id})}"
+							th:href="@{/pizzas/admin/delete/{id}(id=${pizza.id})}"
 							class="btn btn-danger fw-bold">Delete</a></td>
 					</tr>
 				</table>

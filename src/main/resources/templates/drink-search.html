@@ -27,7 +27,7 @@
 				</button>
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav me-auto mt-3 mb-lg-0">
-						<li class="nav-item fw-bold"><a th:href="@{/}"
+						<li class="nav-item fw-bold"><a th:href="@{/pizzas}"
 							class="nav-link">Pizzas</a></li>
 						<li class="nav-item fw-bold"><a th:href="@{/drink}"
 							class="nav-link">Drinks</a></li>
@@ -55,18 +55,18 @@
 				<div class="d-flex justify-content-between mb-2">
 					<div>
 						<form class="d-flex" role="search" method="GET"
-							action="/drink/search">
+							action="/drink/admin/search">
 							<input class="form-control me-2" type="text" name="query"
 								th:value="${query}" aria-label="Search">
 							<button class="btn btn-primary" type="submit">Search</button>
 						</form>
 					</div>
 					<div>
-						<a href="/drink/create" class="btn btn-success mb-1 fw-bold">Add
+						<a href="/drink/admin/create" class="btn btn-success mb-1 fw-bold">Add
 							a new Drink</a>
 					</div>
 				</div>
-				<table class="table table-info table-striped">
+				<table class="table table-primary table-striped">
 					<tr class="text-center">
 						<th>Name</th>
 						<th>Description</th>
@@ -78,14 +78,14 @@
 						<td th:text="*{name}"></td>
 						<td th:text="*{description}"></td>
 						<td th:text="*{price}"></td>
-						<td><a th:href="@{/drink/edit/{id}(id=${drink.id})}"
+						<td><a th:href="@{/drink/admin/edit/{id}(id=${drink.id})}"
 							class="btn btn-warning fw-bold mx-2">Modify</a> <a
-							th:href="@{/drink/delete/{id}(id=${drink.id})}"
+							th:href="@{/drink/admin/delete/{id}(id=${drink.id})}"
 							class="btn btn-danger fw-bold">Delete</a></td>
 					</tr>
 				</table>
 				<div class="d-flex justify-content-end">
-					<a th:href="@{/}" class="btn btn-info fw-bold">Go to Pizzas =></a>
+					<a th:href="@{/}" class="btn btn-primary fw-bold">Go to Pizzas =></a>
 				</div>
 			</div>
 		</div>

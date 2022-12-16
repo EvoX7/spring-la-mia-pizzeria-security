@@ -36,7 +36,7 @@ public class PromotionController {
 		return "index-promotion";
 	}
 
-	@GetMapping("/create")
+	@GetMapping("/admin/create")
 	public String createNewPromotion(Model model) {
 
 		Promotion promotion = new Promotion();
@@ -47,7 +47,7 @@ public class PromotionController {
 		return "promotion-create";
 	}
 
-	@PostMapping("/create")
+	@PostMapping("/admin/create")
 	public String storePromotion(@Valid Promotion promotion, BindingResult bindingResult,
 			RedirectAttributes redirectAttributes) {
 
@@ -71,8 +71,7 @@ public class PromotionController {
 		return "redirect:/promotion";
 	}
 
-
-	@GetMapping("/delete/{id}")
+	@GetMapping("/admin/delete/{id}")
 	public String deletePromotion(@PathVariable("id") int id) {
 
 		promotionService.deletePromotionById(id);

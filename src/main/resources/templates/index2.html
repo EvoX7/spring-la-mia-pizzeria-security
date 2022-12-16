@@ -54,15 +54,15 @@
 					no available drinks</h2>
 				<div class="d-flex justify-content-between mb-2">
 					<div>
-						<a href="/drink/search" class="btn btn-primary fw-bold">Find
+						<a href="/drink/admin/search" class="btn btn-primary fw-bold">Find
 							your drink</a>
 					</div>
 					<div>
-						<a href="/drink/create" class="btn btn-success mb-1 fw-bold">Add
+						<a href="/drink/admin/create" class="btn btn-success mb-1 fw-bold">Add
 							a new Drink</a>
 					</div>
 				</div>
-				<table class="table table-info table-striped">
+				<table class="table table-primary table-striped">
 					<tr class="text-center">
 						<th>Name</th>
 						<th>Description</th>
@@ -74,14 +74,14 @@
 						<td th:text="*{name}"></td>
 						<td th:text="*{description}"></td>
 						<td th:text="*{price}"></td>
-						<td><a th:href="@{/drink/edit/{id}(id=${drink.id})}"
+						<td><a th:href="@{/drink/admin/edit/{id}(id=${drink.id})}"
 							class="btn btn-warning fw-bold mx-2">Modify</a> <a
-							th:href="@{/drink/delete/{id}(id=${drink.id})}"
+							th:href="@{/drink/admin/delete/{id}(id=${drink.id})}"
 							class="btn btn-danger fw-bold">Delete</a></td>
 					</tr>
 				</table>
 				<div class="d-flex justify-content-end">
-					<a th:href="@{/pizzas}" class="btn btn-info fw-bold">Go to Pizzas =></a>
+					<a th:href="@{/pizzas}" class="btn btn-primary fw-bold">Go to Pizzas =></a>
 				</div>
 			</div>
 		</div>

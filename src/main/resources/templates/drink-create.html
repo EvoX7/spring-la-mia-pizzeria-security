@@ -26,7 +26,7 @@
 				</button>
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav me-auto mt-3 mb-lg-0">
-						<li class="nav-item fw-bold"><a th:href="@{/}"
+						<li class="nav-item fw-bold"><a th:href="@{/pizzas}"
 							class="nav-link">Pizzas</a></li>
 						<li class="nav-item fw-bold"><a th:href="@{/drink}"
 							class="nav-link">Drinks</a></li>
@@ -52,7 +52,7 @@
 							th:object="${error}">Value [[*{defaultMessage}]]</li>
 					</ul>
 				</div>
-				<form method="POST" action="/drink/create" th:object="${drink}">
+				<form method="POST" action="/drink/admin/create" th:object="${drink}">
 					<label>Name</label><br> <input type="text" name="name"
 						th:field="*{name}"> <br> <label>Description</label><br>
 					<textarea name="description" th:field="*{description}"></textarea>
